@@ -2,7 +2,7 @@
 
 **Помодоро-таймер с учётом времени по проектам.**
 
-### ▶️ [Открыть](https://mmmaksmog-commits.github.io/focus-timer/)
+### ▶️ [Открыть](https://mysik-portfolio.vercel.app/focus-timer/)
 
 Работает на телефоне и на ПК, без установки и регистрации.
 
@@ -30,4 +30,4 @@ python3 -m http.server 8000
 
 ---
 
-Часть [портфолио](https://mmmaksmog-commits.github.io/).
+Часть [портфолио](https://mysik-portfolio.vercel.app/).
