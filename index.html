@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Фокус</title>
+  <meta name="description" content="Помодоро-таймер с учётом времени по проектам и статистикой за неделю.">
+  <meta name="theme-color" content="#e8553f">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-phase="work">
+  <main class="app">
+    <nav class="phases" role="tablist">
+      <button class="phase" data-phase="work">Фокус</button>
+      <button class="phase" data-phase="short">Перерыв</button>
+      <button class="phase" data-phase="long">Длинный</button>
+    </nav>
+
+    <section class="timer">
+      <svg class="timer__ring" viewBox="0 0 220 220" aria-hidden="true">
+        <circle cx="110" cy="110" r="100" class="track"/>
+        <circle cx="110" cy="110" r="100" class="bar" id="bar"/>
+      </svg>
+      <div class="timer__inner">
+        <span class="timer__time" id="time">25:00</span>
+        <span class="timer__label" id="label">Время сосредоточиться</span>
+        <div class="dots" id="dots" aria-label="Помидоры до длинного перерыва"></div>
+      </div>
+    </section>
+
+    <div class="controls">
+      <button class="ctl" id="resetBtn" aria-label="Сбросить">↺</button>
+      <button class="ctl ctl--main" id="startBtn">Старт</button>
+      <button class="ctl" id="skipBtn" aria-label="Пропустить">⏭</button>
+    </div>
+
+    <label class="project">
+      <span>Проект</span>
+      <select id="projectSelect"></select>
+      <button class="link" id="newProject" type="button">＋ новый</button>
+    </label>
+
+    <section class="card">
+      <div class="card__head">
+        <h2>Эта неделя</h2>
+        <span id="weekTotal"></span>
+      </div>
+      <div class="bars" id="bars"></div>
+      <ul class="projects" id="projectStats"></ul>
+    </section>
+
+    <details class="card settings">
+      <summary>Настройки</summary>
+      <div class="settings__grid">
+        <label>Фокус, мин <input type="number" min="1" max="120" data-setting="work"></label>
+        <label>Перерыв, мин <input type="number" min="1" max="60" data-setting="short"></label>
+        <label>Длинный, мин <input type="number" min="1" max="60" data-setting="long"></label>
+        <label>Помидоров до длинного <input type="number" min="2" max="8" data-setting="every"></label>
+      </div>
+      <label class="check"><input type="checkbox" data-setting="auto"> Автоматически начинать следующий этап</label>
+      <label class="check"><input type="checkbox" data-setting="sound"> Звук по окончании</label>
+    </details>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
